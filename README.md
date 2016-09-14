@@ -1,5 +1,4 @@
-# important_code
-E.g.
+# códigos importantes
 
 Códigos importantes que um dia podem ser utilizados.
 
