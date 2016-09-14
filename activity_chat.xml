@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ChatActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bee_text_default_color" >
+
+        <br.com.bee.android.model.list.ListViewLoadingFromHeader
+            android:id="@+id/chat_posts_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:listSelector="@android:color/transparent"
+            android:overScrollMode="never"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/chat_posts_send_container" />
+
+
+        <LinearLayout
+	        android:id="@id/chat_posts_send_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:background="@color/bee_window_background_color" >            
+            
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:background="@color/bee_button_border_color" >
+	        </LinearLayout>
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="48dp"
+	            android:orientation="horizontal"
+	            android:gravity="bottom"
+				android:weightSum="1">
+
+	            <EditText
+	                android:id="@+id/chat_posts_message"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+					android:hint="@string/write_message"
+	                android:maxLength="1024"
+	                android:maxLines="3"
+	                android:inputType="textCapSentences|textMultiLine"
+					android:layout_weight="1.00"
+                    android:imeOptions="actionDone"
+					android:visibility="visible" />
+
+				<ImageButton
+	                android:id="@+id/chat_posts_send_button"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:focusable="false"
+	                android:gravity="center_vertical"
+	                android:adjustViewBounds="false"
+	                android:background="@android:color/transparent"
+	                android:contentDescription="@string/Send"
+	                android:padding="5dp"
+					android:src="@drawable/ic_action_send_now_gray"
+					android:visibility="gone" />
+
+
+				<br.com.bee.android.FrameLayoutFixed
+					android:id="@+id/record_panel"
+					android:layout_width="match_parent"
+					android:layout_height="48dp"
+					android:layout_weight="4.67"
+					android:background="@color/bee_window_background_color"
+					android:visibility="gone">
+
+					<LinearLayout
+						android:id="@+id/slideText"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:layout_marginLeft="30dp"
+						android:orientation="horizontal" >
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_vertical"
+							android:layout_marginTop="1dp"
+							android:src="@drawable/slidearrow" />
+
+						<TextView
+							android:id="@+id/slideToCancelTextView"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_vertical"
+							android:layout_marginLeft="6dp"
+							android:textColor="#999999"
+							android:textSize="12dp" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center_vertical"
+						android:background="@color/bee_window_background_color"
+						android:orientation="horizontal"
+						android:paddingLeft="13dp"
+						android:visibility="visible">
+
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_vertical"
+							android:layout_marginTop="1dp"
+							android:id="@+id/recording_rec_image"
+							android:src="@drawable/rec" />
+
+						<TextView
+							android:id="@+id/recording_time_text"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_vertical"
+							android:layout_marginLeft="6dp"
+							android:text="00:00"
+							android:textColor="#4d4c4b"
+							android:textSize="16dp" />
+					</LinearLayout>
+
+				</br.com.bee.android.FrameLayoutFixed>
+
+				<ImageButton
+					android:id="@+id/chat_posts_record_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@android:color/transparent"
+					android:contentDescription="@string/SendAudio"
+					android:enabled="false"
+					android:src="@drawable/mic_button_states"
+					android:adjustViewBounds="true"
+					android:paddingRight="5dp"
+					android:paddingBottom="5dp" />
+
+			</LinearLayout>
+
+
+
+
+
+
+
+
+
+		</LinearLayout>
+    </RelativeLayout>
+
+</merge>
